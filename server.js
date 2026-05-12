@@ -9,8 +9,8 @@ import swaggerUi from 'swagger-ui-express'
 
 import { createRequire } from "module";
 
-const require = createRequire(import.meta.url); // 👈 creates require for ES modules
-const swaggerFile = require("./swagger/swagger-output.json"); // 👈 now works perfectly
+const require = createRequire(import.meta.url);
+const swaggerFile = require("./swagger/swagger-output.json"); 
 
 const app=express()
 
@@ -25,7 +25,7 @@ app.use(express.json())
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.get('/health',(req,res)=>{
-    res.send("app is running")
+    res.send("healthy app")
 })
 
 app.use('/auth',authRoutes)

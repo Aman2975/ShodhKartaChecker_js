@@ -2,7 +2,7 @@ import swaggerAutogen from "swagger-autogen";
 
 const doc = {
   info: {
-    title: "Quiz Platform API",
+    title: "ShodhKartaChecker",
     description: "Auto generated API documentation",
   },
   host: "localhost:3000",
