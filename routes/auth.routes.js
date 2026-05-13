@@ -1,18 +1,39 @@
 import express from 'express'
+import register from '../controllers/register.controller.js'
+import login from '../controllers/login.controller.js'
+
 
 const Router=express.Router()
 
 
-Router.post('/register',async (req,res)=>{
+Router.post('/register',
+     /*  #swagger.parameters['body'] = {
+        in: 'body',
+        required: true,
+        schema: {
+          full_name: '',
+          email: '',
+          password: '',
+          username: ''
+        }
+  }
 
+  */      
+  
+    register)
+Router.post('/login',
+    
+     /*  #swagger.parameters['body'] = {
+        in: 'body',
+        required: true,
+        schema: {
+        
+          email: 'aman@gmail.com',
+          password: '123456',
+          
+        }
+  } */
 
-   
-    res.send("/register")
-})
-Router.post('/login',async (req,res)=>{
-
-   
-    res.send("/login")
-})
+    login)
 
 export default Router

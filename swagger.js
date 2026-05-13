@@ -5,7 +5,7 @@ const doc = {
     title: "ShodhKartaChecker",
     description: "Auto generated API documentation",
   },
-  host: "localhost:3000",
+  host: "localhost:5000",
   securityDefinitions: {
     bearerAuth: {
       type: "apiKey",
