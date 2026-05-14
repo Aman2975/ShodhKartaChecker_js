@@ -2,7 +2,10 @@ import express from 'express'
 import fs from "fs";
 import cors from 'cors'
 import errorHandler from './middlewares/errorHandler.js'
+import {isAdmin,isUser} from './middlewares/verify.js'
 import authRoutes from './routes/auth.routes.js'
+import jobRoutes from './routes/jobs.routes.js'
+
 // import swaggerSpec from './config/swagger.js'
 import swaggerUi from 'swagger-ui-express'
 // import swaggerFile from './swagger/swagger-output.json' assert { type: "json" };
@@ -36,5 +39,6 @@ app.get('/health',(req,res)=>{
 })
 
 app.use('/auth',authRoutes)
+app.use('/jobs',isUser,jobRoutes)
 
 app.use(errorHandler)

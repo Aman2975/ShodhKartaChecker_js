@@ -95,6 +95,52 @@
           }
         }
       }
+    },
+    "/jobs/create": {
+      "post": {
+        "tags": [
+          "Upload"
+        ],
+        "description": "Upload a PDF file",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "type": "file",
+            "required": true,
+            "description": "PDF file to upload"
+          },
+          {
+            "name": "job_name",
+            "in": "formData",
+            "type": "string",
+            "required": true,
+            "description": "Name of the job",
+            "default": ""
+          },
+          {
+            "name": "page_range",
+            "in": "formData",
+            "type": "string",
+            "required": false,
+            "description": "Page range e.g. 1-5",
+            "default": ""
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
     }
   }
 }
